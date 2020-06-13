@@ -43,7 +43,7 @@ async def get_weather(weather):
 
     if not OWM_API:
         await weather.edit(
-            "`Get an API key from` https://openweathermap.org/ `first.`")
+            "`get an api key from https://openweathermap.org/ first.`")
         return
 
     APPID = OWM_API
@@ -52,7 +52,7 @@ async def get_weather(weather):
         CITY = DEFCITY
         if not CITY:
             await weather.edit(
-                "`Please specify a city or set one as default using the WEATHER_DEFCITY config variable.`"
+                "`please specify a city or set one as default using the weather_defcity config variable.`"
             )
             return
     else:
@@ -81,7 +81,7 @@ async def get_weather(weather):
     result = json.loads(request.text)
 
     if request.status_code != 200:
-        await weather.edit(f"`Invalid country.`")
+        await weather.edit(f"`invalid country.`")
         return
 
     cityname = result['name']
@@ -122,15 +122,15 @@ async def get_weather(weather):
         return xx
 
     await weather.edit(
-        f"**Temperature:** `{celsius(curtemp)}°C | {fahrenheit(curtemp)}°F`\n"
+        f"`temperature: {celsius(curtemp)}°C | {fahrenheit(curtemp)}°F`\n"
         +
-        f"**Min. Temp.:** `{celsius(min_temp)}°C | {fahrenheit(min_temp)}°F`\n"
+        f"`minimum temperature: {celsius(min_temp)}°C | {fahrenheit(min_temp)}°F`\n"
         +
-        f"**Max. Temp.:** `{celsius(max_temp)}°C | {fahrenheit(max_temp)}°F`\n"
-        + f"**Humidity:** `{humidity}%`\n" +
-        f"**Wind:** `{kmph[0]} kmh | {mph[0]} mph, {findir}`\n" +
-        f"**Sunrise:** `{sun(sunrise)}`\n" +
-        f"**Sunset:** `{sun(sunset)}`\n\n" + f"**{desc}**\n" +
+        f"`maximum temperature: {celsius(max_temp)}°C | {fahrenheit(max_temp)}°F`\n"
+        + f"`humidity: {humidity}%`\n" +
+        f"`wind: {kmph[0]} kmh | {mph[0]} mph | {findir}`\n" +
+        f"`sunrise: {sun(sunrise)}`\n" +
+        f"`sunset: {sun(sunset)}`\n\n" + f"`{desc}`\n" +
         f"`{cityname}, {fullc_n}`\n" + f"`{time}`")
 
 

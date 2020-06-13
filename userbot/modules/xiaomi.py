@@ -14,14 +14,14 @@ async def _(event):
     link = event.pattern_match.group(1)
     chat = "@XiaomiGeeksBot"
     firmware = f"firmware"
-    await event.edit("```Processing```")
+    await event.edit("`processing`")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
           try:
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=774181428))
               await conv.send_message(f'/{firmware} {link}')
               response = await response
           except YouBlockedUserError:
-              await event.reply("```Unblock @XiaomiGeeksBot plox```")
+              await event.reply("`please unblock @XiaomiGeeksBot`")
               return
           else:
              await event.delete()
@@ -35,14 +35,14 @@ async def _(event):
     link = event.pattern_match.group(1)
     chat = "@XiaomiGeeksBot"
     mieu = f"eu"
-    await event.edit("```Processing```")
+    await event.edit("`processing`")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
           try:
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=774181428))
               await conv.send_message(f'/{mieu} {link}')
               response = await response
           except YouBlockedUserError:
-              await event.reply("```Unblock @xiaomiGeeksBot plox```")
+              await event.reply("`please unblock @XiaomiGeeksBot`")
               return
           else:
              await event.delete()
@@ -56,14 +56,14 @@ async def _(event):
     link = event.pattern_match.group(1)
     chat = "@XiaomiGeeksBot"
     fboot = f"fastboot"
-    await event.edit("```Processing```")
+    await event.edit("`processing`")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
           try:
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=774181428))
               await conv.send_message(f'/{fboot} {link}')
               response = await response
           except YouBlockedUserError:
-              await event.reply("```Unblock @XiaomiGeeksBoot plox```")
+              await event.reply("`please unblock @XiaomiGeeksBot`")
               return
           else:
              await event.delete()
@@ -77,14 +77,14 @@ async def _(event):
     link = event.pattern_match.group(1)
     chat = "@XiaomiGeeksBot"
     recovery = f"recovery"
-    await event.edit("```Processing```")
+    await event.edit("`processing`")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
           try:
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=774181428))
               await conv.send_message(f'/{recovery} {link}')
               response = await response
           except YouBlockedUserError:
-              await event.reply("```Unblock @XiaomiGeeksBot plox```")
+              await event.reply("`please unblock @XiaomiGeeksBot`")
               return
           else:
              await event.delete()
@@ -97,14 +97,14 @@ async def _(event):
     link = event.pattern_match.group(1)
     chat = "@XiaomiGeeksBot"
     pitch = f"pb"
-    await event.edit("```Processing```")
+    await event.edit("`processing`")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
           try:
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=774181428))
               await conv.send_message(f'/{pitch} {link}')
               response = await response
           except YouBlockedUserError:
-              await event.reply("```Unblock @XiaomiGeeksBot plox```")
+              await event.reply("`please unblock @XiaomiGeeksBot`")
               return
           else:
              await event.delete()
@@ -117,14 +117,14 @@ async def _(event):
     link = event.pattern_match.group(1)
     chat = "@XiaomiGeeksBot"
     ofox = f"of"
-    await event.edit("```Processing```")
+    await event.edit("`processing`")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
           try:
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=774181428))
               await conv.send_message(f'/{ofox} {link}')
               response = await response
           except YouBlockedUserError:
-              await event.reply("```Unblock @XiaomiGeeksBot plox```")
+              await event.reply("`please unblock @XiaomiGeeksBot`")
               return
           else:
              await event.delete()

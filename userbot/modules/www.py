@@ -17,7 +17,7 @@ from userbot.events import register
 @register(outgoing=True, pattern="^.speed$")
 async def speedtst(spd):
     """ For .speed command, use SpeedTest to check server speeds. """
-    await spd.edit("`Running high speed test . . .`")
+    await spd.edit("`running speed test...`")
     test = Speedtest()
 
     test.get_best_server()
@@ -27,16 +27,12 @@ async def speedtst(spd):
     result = test.results.dict()
 
     await spd.edit("`"
-                   "Started at "
-                   f"{result['timestamp']} \n\n"
-                   "Download "
+                   "download "
                    f"{speed_convert(result['download'])} \n"
-                   "Upload "
+                   "upload "
                    f"{speed_convert(result['upload'])} \n"
-                   "Ping "
-                   f"{result['ping']} \n"
-                   "ISP "
-                   f"{result['client']['isp']}"
+                   "ping "
+                   f"{result['ping']}"
                    "`")
 
 
@@ -59,10 +55,10 @@ def speed_convert(size):
 async def pingme(pong):
     """ For .ping command, ping the userbot from any chat.  """
     start = datetime.now()
-    await pong.edit("`pooong!`")
+    await pong.edit("`pong!`")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit("`Pong!\n%sms`" % (duration))
+    await pong.edit("`pong!\n%sms`" % (duration))
 
 CMD_HELP.update(
     {"ping": "`.ping`\
