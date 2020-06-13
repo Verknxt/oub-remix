@@ -27,11 +27,11 @@ async def speedtst(spd):
     result = test.results.dict()
 
     await spd.edit("`"
-                   "download "
+                   "download: "
                    f"{speed_convert(result['download'])} \n"
-                   "upload "
+                   "upload: "
                    f"{speed_convert(result['upload'])} \n"
-                   "ping "
+                   "ping: "
                    f"{result['ping']}"
                    "`")
 
