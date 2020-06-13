@@ -96,7 +96,7 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit('`successfully updated your userbot!')
+    await event.edit('`successfully updated your userbot!`')
 
     if BOTLOG:
             await event.client.send_message(
@@ -185,7 +185,7 @@ async def upstream(event):
         await event.edit(
             '`force syncing to latest stable userbot code please wait...`')
     else:
-        await event.edit('`updating your userbot please wait....`')
+        await event.edit('`updating your userbot please wait...`')
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
     elif conf == "deploy":
