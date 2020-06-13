@@ -1088,9 +1088,9 @@ async def _(event):
             await event.client.edit_permissions(chat, reply_message.from_id, until_date=None, view_messages=False)
             reply = "`{} warnings, <u><a href='tg://user?id={}'>user</a></u> has been banned!`".format(limit, reply_message.from_id)
     else:
-        reply = "`<u><a href='tg://user?id={}'>user</a></u> has {}/{} warnings watch out!`".format(reply_message.from_id, num_warns, limit)
+        reply = "<u><a href='tg://user?id={}'>`user`</a></u> `has {}/{} warnings watch out!`".format(reply_message.from_id, num_warns, limit)
         if warn_reason:
-            reply += "`\nreason for last warn:\n{}`".format(html.escape(warn_reason))
+            reply += "\n`reason for last warn:\n{}`".format(html.escape(warn_reason))
     #
     await event.edit(reply, parse_mode="html")
 
@@ -1105,7 +1105,7 @@ async def _(event):
         limit, soft_warn = sql.get_warn_setting(event.chat_id)
         if reasons:
             text = "`this user has {}/{} warnings for the following reasons:`".format(num_warns, limit)
-            text += "\r\n"
+            text += "`\r\n`"
             text += reasons
             await event.edit(text)
         else:
